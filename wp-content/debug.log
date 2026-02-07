@@ -1,0 +1,2 @@
+[06-Feb-2026 16:46:33 UTC] PHP Warning:  Undefined array key "host" in /workspaces/UX221Lab4_Midtern/.wordpress/wp-includes/pluggable.php on line 1721
+[07-Feb-2026 00:49:46 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in /workspaces/UX221Lab4_Midtern/.wordpress/wp-admin/includes/class-theme-upgrader.php on line 160
