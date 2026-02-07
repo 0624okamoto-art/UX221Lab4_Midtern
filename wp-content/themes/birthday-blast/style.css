@@ -1,0 +1,1418 @@
+/*
+Theme Name: Birthday Blast
+Theme URI: https://cawpthemes.com/birthday-blast-free-wordpress-theme/
+Author: CA WP Themes
+Author URI: https://cawpthemes.com/
+Description: Welcome to Birthday Blast, the ultimate WordPress theme designed to make your birthday celebrations extra special! Whether you're planning a party for yourself, a loved one, or a client, Birthday Blast offers a vibrant and dynamic platform to showcase your event in style.With its sleek and modern design, Birthday Blast is fully responsive, ensuring your website looks stunning on any device, from desktops to smartphones. Its intuitive customization options allow you to personalize every aspect of your site effortlessly, from colors and fonts to layout and content.Featuring built-in event management tools, you can easily create and manage event schedules, RSVP forms, and guest lists, making it easier than ever to coordinate your birthday bash. Plus, with seamless integration with popular plugins like WooCommerce, you can effortlessly sell tickets or merchandise directly from your website.Whether you're throwing a small gathering or a large-scale extravaganza, Birthday Blast has everything you need to make your birthday celebration a memorable one. Download Birthday Blast today and let the festivities begin!
+Version: 1.3.3
+Tested up to: 6.8
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: birthday-blast
+Copyright (c) 2025 CA WP Themes. All rights reserved.
+Tags: one-column, two-columns, three-columns, four-columns, grid-layout , custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, translation-ready, threaded-comments, blog, photography
+*/
+/* Reset */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: cursive;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: cursive;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #000;
+}
+
+p{
+    color: #000;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-transform: underline;
+    text-decoration: underline;
+    color: #000;
+}
+
+ul {
+    text-align: left;
+}
+
+.widget footer {
+    background: none;
+}
+
+.post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.post-list li {
+    margin-bottom: 20px;
+}
+
+p.logged-in-as {
+    color: #000;
+}
+
+.comments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.comment {
+    margin-bottom: 20px;
+}
+.comment-avatar {
+    float: left;
+    margin-right: 20px;
+}
+.comment-body {
+    overflow: hidden;
+}
+.comment-author {
+    font-weight: bold;
+    margin: 0;
+}
+.comment-date {
+    font-size: 0.8rem;
+    color: #666;
+}
+.comment-content {
+    margin: 10px 0;
+}
+.comment-reply {
+    margin-left: 50px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.table th {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+.table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Style links within post content */
+.entry-content a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Style links within comment content */
+.comment-content a {
+  color: red;
+  text-decoration: underline;
+}
+
+/* Style links within text widgets */
+.widget_text a {
+  color: green;
+  text-decoration: underline;
+  text-transform: underline;
+}
+
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  border-color: red !important;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+.sticky {
+    border: 2px solid #ff0000;
+    background-color: #ffffcc;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+.skip-link:focus {
+    left: auto;
+    top: auto;
+}
+
+/* Specific styling for sticky posts */
+.sticky {
+  border: 2px solid #ff4500; /* Highlight with a thicker border */
+  background-color: #fffae6; /* Subtle background color to distinguish */
+}
+
+/* Optional: Adding a "sticky" badge or label */
+.sticky::before {
+  content: "Sticky";
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #ff4500; /* Same color as the border for consistency */
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+
+/* Underline links in post content */
+.entry-content a {
+    text-transform: underline;
+    text-decoration: underline;
+    color: #1a0dab; /* A distinguishable color */
+}
+
+/* Underline links in comment content */
+.comment-content a {
+    text-transform: underline;
+    text-decoration: underline;
+    color: #1a0dab; /* A distinguishable color */
+}
+
+/* Underline links in text widgets */
+.widget_text a {
+    text-transform: underline;
+    text-decoration: underline;
+    color: #1a0dab; /* A distinguishable color */
+}
+
+/* Underline links in custom blocks (if applicable) */
+.custom-content a {
+    text-transform: underline;
+    text-decoration: underline;
+    color: #1a0dab; /* A distinguishable color */
+}
+
+
+/*--------Comments-----------*/
+
+/* Style the comments section */
+.comments-area {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+}
+
+/* Style the comment form */
+.comment-form {
+    margin-top: 30px;
+}
+
+/* Style the comment form fields */
+.comment-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.comment-form input[type="text"], 
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Style the comment list */
+.comment-list {
+    margin-top: 30px;
+}
+
+.comment {
+    margin-bottom: 30px;
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.comment-meta {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.comment-content {
+    margin-bottom: 10px;
+}
+
+.comment-reply-link {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.comment-reply-link:hover {
+    color: #f00;
+}
+
+/* Style the comment navigation links */
+.comment-navigation {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-nav-prev,
+.comment-nav-next {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comment-nav-prev a,
+.comment-nav-next a {
+    text-decoration: none;
+    color: #333;
+}
+
+.comment-nav-prev:hover,
+.comment-nav-next:hover {
+    background-color: #ddd;
+}
+
+/*----------------sidebar---------------------*/
+
+.widget-area {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    font-family: 'Inter', sans-serif;
+}
+
+.widget-area .widget {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed #ddd;
+}
+
+.widget-area .widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-area .widget-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    position: relative;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.widget-area .widget-title::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #5c6ac4, #8895e6);
+    display: block;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.widget-area ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.widget-area ul li {
+    margin: 0;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.widget-area ul li:last-child {
+    border-bottom: none;
+}
+
+.widget-area ul li a {
+    color: #444;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.widget-area ul li a::before {
+    content: "›";
+    color: #5c6ac4;
+    margin-right: 6px;
+    transition: margin 0.3s ease;
+}
+
+.widget-area ul li a:hover {
+    color: #8b8b8b;
+    text-decoration: none;
+    padding-left: 4px;
+}
+
+.widget-area input[type="text"],
+.widget-area input[type="search"] {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+.widget-area input[type="text"]:focus,
+.widget-area input[type="search"]:focus {
+    border-color: #5c6ac4;
+    box-shadow: 0 0 0 2px rgba(92, 106, 196, 0.15);
+    outline: none;
+}
+
+a.wp-block-latest-comments__comment-author {
+    color: gray;
+}
+
+
+/*----------Recommended CSS-------*/
+
+.wp-caption {
+  font-size: 14px;
+  color: #666;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.wp-caption-text {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+.gallery-caption {
+  font-size: 14px;
+  color: #666;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+
+.bypostauthor {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.alignright {
+  float: right;
+  margin-left: 10px;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 10px;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/*-----------button--------*/
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #45b3df;
+}
+
+.theme-btn a {
+    padding: 15px;
+    font-size: 18px;
+    background: #45b3df;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.theme-btn a:hover {
+    background: #000;
+}
+
+/*--------------pagination----------*/
+
+.nav-links {
+    display: -webkit-inline-box;
+    padding: 10px;
+}
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    display: inline;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    color: #fff;
+    background-color: #45b3df;
+}
+
+.pagination .current {
+    position: relative;
+    top: 0px;
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    margin: 10px;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+/* Pagination Styling */
+.navigation.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.navigation.pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.navigation.pagination .page-numbers:hover,
+.navigation.pagination .page-numbers.current {
+    background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+    color: #fff;
+    border-color: transparent;
+}   
+
+/*-------------------------------------Header CSS-------------------------------*/
+
+/* Layout */
+.header {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.site-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content {
+    flex: 2;
+    margin-right: 20px;
+}
+
+p.site-description {
+    font-size: 26px;
+    color: #fff;
+}
+
+
+.display_only h1 a {
+    color: #45b3df;
+}
+
+h1.site-title a:hover {
+    text-decoration: none;
+}
+
+.head-banner-img {
+   position: relative;
+   background-size: cover;
+   background-position: center;
+}
+
+h1.site-title a {
+    font-size: 55px;
+    color: #000;
+}
+
+.display_only {
+    text-align: left;
+    padding: 10px;
+}
+
+.display_only p {
+    color: #000;
+    font-size: 13px;
+}
+
+.display_only h1 {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.site-branding {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   color: #fff;
+   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+
+.site-title, .site-description {
+    margin: 0;
+}
+
+
+.site-header .site-logo h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.site-header .site-logo img {
+  max-height: 50px;
+}
+
+/*-----------Blog page---------*/
+
+.page-template h2.post-title {
+    margin: 0px;
+    font-size: 16px;
+    padding: 0px;
+}
+
+.blog-page-main .post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/*------------------------------------Index.php----------------------------------*/
+
+h2.entry-title {
+    font-size: 38px;
+}
+
+.main-post-content-box {
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.main-post-content-box .entry-content {
+    padding: 10px;
+}
+
+.card-body p {
+    color: #000;
+}
+
+/* Content Styles */
+.entry-content {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.entry-header {
+  margin-bottom: 1.5em;
+}
+
+.entry-title {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.entry-meta {
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+.entry-meta a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.entry-meta a:hover {
+  color: #000;
+}
+
+.entry-footer {
+  margin-top: 1.5em;
+}
+
+.entry-title {
+    margin-bottom: 10px;
+}
+
+.entry-content {
+    margin-bottom: 20px;
+}
+
+.page-links {
+    margin-top: 20px;
+    clear: both;
+}
+
+.tags-list {
+    margin-bottom: 10px;
+}
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.read-more-link:hover {
+    background-color: #45b3df;
+}
+
+.single-post .post-thumbnail {
+    padding: 0px 0px 40px 0px;
+}
+
+.single-post header.entry-header h1 {
+    font-size: 36px;
+    padding: 10px 0px;
+}
+
+.singlepost-category {
+    padding: 20px 0px 0px 0px;
+}
+
+.singlepost-category a {
+    background: #45b3df;
+    padding: 3px 15px;
+    margin: 2px;
+}
+
+.card-body a {
+    color: #fff;
+    background-color: #45b3df !important;
+    border: none;
+}
+
+.card-body a:hover {
+    background: #000;
+}
+
+.main-single-post-page {
+    padding: 40px 0px 0px 0px;
+}
+
+h2.entry-title {
+    padding: 20px 0px 10px 0px;
+    font-size: 34px;
+    color: #000;
+}
+
+.main-single-post-page h2.entry-title{
+padding: 10px 0px;
+}
+
+.entry-meta {
+    font-size: 14px;
+    margin-bottom: 1em;
+    font-weight: 700;
+    color: #000;
+    max-width: 260px;
+    padding: 0px 0px 0px 10px;
+    background: #45b3df;
+}
+
+
+.card-body h5 {
+    color: #000;
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+.cat-meta {
+    padding: 10px 0px 10px 0px;
+}
+
+.cat-meta a {
+    background: transparent !important;
+}
+
+.archive .page-container {
+    margin-top: 30px;
+}
+
+
+/*-----------------Section-----------------------*/
+
+/* Style for section */
+
+
+/* Style for section heading */
+section h2 {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Style for section content */
+section p {
+  font-size: 18px;
+  color: #000;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+
+header.entry-header h1 {
+    padding: 40px 0px;
+}
+
+/*-------------Banner Section------*/
+
+.main-banner-main {
+  position: relative;
+  display: inline-block;
+}
+
+.text-box {
+    position: absolute;
+    top: 20%;
+    text-align: right;
+    padding: 10px;
+    width: 100%;
+}
+
+section#banner-section-first p {
+    font-size: 40px;
+    color: #000;
+}
+
+section#banner-section-first h2 {
+    font-size: 64px;
+    color: #45b3df;
+    font-family: cursive;
+}
+
+
+/*-----------------About Section----------------*/
+
+
+.about-box-img {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.about-left h3 {
+    color: #45b3df;
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+.about-right {
+    padding: 30px;
+}   
+
+/*-----------Party Details Section---------*/
+
+
+.feature-content-box h3 {
+    font-size: 40px;
+}
+
+.feature-content-box p {
+    font-size: 26px;
+    color: #000;
+}
+
+.box-content {
+    margin: 20px;
+}
+
+.feature-content-box {
+    padding: 20px;
+}
+
+/*-----------Section One-------------*/
+
+.latest-content p {
+    font-size: 17px;
+    color: #000;
+}
+
+.latest-content {
+    padding: 0px 10px;
+    text-align: left;
+    max-height: 4.5em;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+.readmore-latest {
+    padding: 0px 10px;
+    text-align: left;
+}
+
+.readmore-latest a {
+    color: #000;
+    font-weight: 500;
+}
+
+h2.post-title {
+    margin: 0px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+
+.section-heading-main h3 {
+    text-align: center;
+    padding: 130px 0px 40px 0px;
+    font-size: 56px;
+    color: #45b3df;
+}
+
+
+section#section3 {
+    padding: 40px;
+}
+
+
+section#section1 {
+    margin-bottom: 30px;
+    padding: 0px;
+}
+
+h2.post-title a {
+    font-size: 24px;
+    color: #45b3df;
+}
+
+.post-section-box {
+    padding: 15px;
+}
+
+
+h2.second-sec-heading a {
+    color: #fff;
+    font-size: 42px;
+}
+
+
+.post-sect2 {
+    margin: 10px;
+}
+
+
+.the-content-box-sec2 {
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.the-content-box-sec2 p {
+    color: #fff;
+}
+
+.sec2-cat a {
+    color: #fff;
+    background: #45b3df;
+    padding: 5px;
+}   
+
+.sec2-meta span {
+    color: #45b3df;
+}
+
+
+.post-sect4 {
+    text-align: right;
+    margin: 10px;
+}
+
+
+section#section3 h2.post-title {
+    font-size: 19px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.post-sect4-more {
+    text-align: center;
+    margin: 10px;
+}
+
+.sec2-meta {
+    padding: 0px 0px 0px 10px;
+    margin-top: 10px;
+}
+
+
+/*-------------------Post Nav-----------*/
+
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+}
+
+.nav-previous a, .nav-next a {
+    width: 300px;
+    display: inline-block;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.entry-share {
+    color: #000;
+}
+
+.nav-previous a:hover, .nav-next a:hover {
+   
+    color: #45b3df;
+   
+}
+
+.nav-previous a {
+    border-radius: 5px 0 0 5px;
+}
+
+.nav-next a {
+    border-radius: 0 5px 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .post-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-previous a, .nav-next a {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 1em;
+    }
+}
+
+/*----------Blog Page--------*/
+
+
+.blog-page-main {
+    padding: 40px;
+}
+
+/*---------------Contact Us Page-------------*/
+
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-form-container p {
+    margin-bottom: 20px;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.contact-main-box {
+    padding: 40px;
+}
+
+.info-box {
+    text-align: center;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(205 124 124 / 80%);
+    margin: 10px;
+}
+
+.address i {
+    font-size: 40px;
+}
+
+.address h6 {
+    font-size: 20px;
+    margin: 7px;
+}
+
+
+.info-box p {
+    color: #000;
+}
+
+
+/*-------------------Woocommerce---------------*/
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt {
+    background-color: #000000;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.woocommerce ul.products li.product a {
+    text-decoration: none;
+    color: #fff;
+    background: #000000;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price {
+    color: #000000;
+    font-size: 1.25em;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+
+/*-----------------Footer--------------------*/
+
+
+/* Footer styles */
+.Main-footer footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.widget_text p {
+    font-size: 16px;
+}   
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #45b3df;
+}
+
+/* Copyright styles */
+.copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+
+.footer-copyright {
+    text-align: center;
+    background: #111;
+    padding: 10px;
+    color: #fff;
+}
+
+.footer-copyright p {
+    color: #45b3df;
+}
+
+footer.site-footer p {
+    color: #fff;
+}
+
+
+/*-------------Back to Top--*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000; /* Customize as needed */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #000;
+  transform: scale(1.1);
+}
+
+
+/*-----------------------MOBILE Media----------------------------*/
+
+
+@media only screen and (max-width: 768px) {
+
+
+section#banner-section-first h2 {
+    font-size: 22px;
+    color: #0b0b0b;
+}
+
+.about-box {
+    text-align: center;
+    padding: 10px;
+    /* background: #fff; */
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+.text-box {
+    position: absolute;
+    top: 20%;
+    text-align: right;
+    width: 100%;
+}
+
+    .text-box p {
+    display: none;
+}
+
+    .sec2-cat {
+    margin-top: 10px;
+}
+
+h2.second-sec-heading a {
+    color: #fff;
+    font-size: 26px;
+}
+
+.post-sect4 {
+    text-align: left;
+    margin: 10px;
+}
+
+    .about-text-box {
+    text-align: center;
+    background: #fff;
+    width: 65%;
+    padding: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+}
+
+.about-text-box h3 {
+    color: #45b3df;
+    font-size: 12px;
+}
+
+.about-text-box p {
+    font-size: 10px;
+}
+
+section#about-two {
+    height: 400px;
+}
+    .about-box-1{
+        width: 100%;
+    }
+    img.about-two-small {
+    width: 30%;
+    }
+
+    .display_only h1 {
+    font-size: 32px;
+    }
+
+    p.site-description {
+    font-size: 14px;
+    color: #fff;
+    }
+
+
+    .site-branding {
+    padding: 5px;
+    }
+
+
+    h1.site-title a {
+        font-size: 30px;
+        color: #000;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    h2.post-title {
+    text-align: left;
+    }
+
+    section#about {
+    text-align: center;
+    }
+
+    h1.other-pages {
+    color: rgba(0,0,0,1);
+    font-size: 60px;
+    text-align: center;
+    }
+
+    .info-box {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(205 124 124 / 80%);
+    margin: 10px;
+    }
+}
+
+
+
+
+
